@@ -11,6 +11,19 @@ body {
     box-sizing: border-box;
 }
 
+// --------------заголовки на секциях----------------
+.fontTitle {
+    @include fontTitle;
+
+    @media (max-width: 840px) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 640px) {
+        font-size: 38px;
+    }
+}
+
 // ------------------Главная секция ----------------------
 header {
     height: 100vh;
@@ -111,6 +124,66 @@ header {
     }
 }
 
+
+// -------------------------секция с каруселью----------------
+// section {
+//     height: 100vh;
+// }
+
+.carouselSection {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url(../img/pattern-background.png);
+
+    .carousel {
+        margin: 0 auto;
+        display: flex;
+
+        .slick-slide {
+            outline: none;
+
+            img {
+                box-sizing: border-box;
+                width: 700px;
+                height: 465px;
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+// --------------секция свежие ингредиенты------------------------
+
+.ingredients {
+    background: url(../img/ingredients-back.jpg);
+    // width: 100vw;
+    // height: 100vh;
+
+    h2 {
+        @include fontTitle;
+        color: $colorHeading;
+        text-transform: uppercase;
+        padding-top: 115px;
+    }
+
+    p {
+        max-width: 1190px;
+        margin: 0 auto;
+        color: $colorHeading;
+        text-align: center;
+        font-size: 32px;
+        line-height: 60px;
+        padding: 0 15px;
+        padding-bottom: 745px;
+    }
+}
+
+
+
+
+
+
+
+
 @media (max-width: 1200px) {
     header {
         .headerContainer {
@@ -122,6 +195,13 @@ header {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1040px) {
+    .ingredients {
+        height: 1100px;
+
     }
 }
 
@@ -149,6 +229,7 @@ header {
             }
         }
     }
+
 }
 
 @media (max-width: 840px) {
@@ -157,9 +238,9 @@ header {
             .headerMenu {
                 .mini-menu {
                     display: block;
-                    position: fixed;
-                    right: 35px;
-                    top: 40px;
+                    position: relative;
+                    right: 15px;
+                    top: 20px;
                     z-index: 101px;
                     width: 30px;
                     // height: 13px;
@@ -252,6 +333,14 @@ header {
             }
         }
     }
+
+    .ingredients {
+        height: 1100px;
+
+        h2 {
+            padding-top: 40px;
+        }
+    }
 }
 
 @media (max-width: 630px) {
@@ -272,6 +361,19 @@ header {
                     font-size: 60px;
                 }
             }
+        }
+    }
+
+    .ingredients {
+        height: 1100px;
+        background-position: center;
+
+        h2 {
+            font-size: 38px;
+        }
+
+        p {
+            line-height: 40px;
         }
     }
 }

@@ -22,6 +22,27 @@ body {
   box-sizing: border-box;
 }
 
+.fontTitle {
+  font-size: 64px;
+  color: #BDA345;
+  font-family: "Philosopher", "Margot Xtrafette";
+  font-weight: 700;
+  text-align: center;
+  padding: 50px 0;
+}
+
+@media (max-width: 840px) {
+  .fontTitle {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fontTitle {
+    font-size: 38px;
+  }
+}
+
 header {
   height: 100vh;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/main.jpg) no-repeat center top;
@@ -115,12 +136,65 @@ header .headerContainer .headerMain p {
   padding-top: 30px;
 }
 
+.carouselSection {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/pattern-background.png);
+}
+
+.carouselSection .carousel {
+  margin: 0 auto;
+  display: flex;
+}
+
+.carouselSection .carousel .slick-slide {
+  outline: none;
+}
+
+.carouselSection .carousel .slick-slide img {
+  box-sizing: border-box;
+  width: 700px;
+  height: 465px;
+  margin-bottom: 80px;
+}
+
+.ingredients {
+  background: url(../img/ingredients-back.jpg);
+}
+
+.ingredients h2 {
+  font-size: 64px;
+  color: #BDA345;
+  font-family: "Philosopher", "Margot Xtrafette";
+  font-weight: 700;
+  text-align: center;
+  padding: 50px 0;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 115px;
+}
+
+.ingredients p {
+  max-width: 1190px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  line-height: 60px;
+  padding: 0 15px;
+  padding-bottom: 745px;
+}
+
 @media (max-width: 1200px) {
   header .headerContainer {
     padding: 0 15px;
   }
   header .headerContainer .headerMain h1 {
     font-size: 110px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .ingredients {
+    height: 1100px;
   }
 }
 
@@ -141,9 +215,9 @@ header .headerContainer .headerMain p {
 @media (max-width: 840px) {
   header .headerContainer .headerMenu .mini-menu {
     display: block;
-    position: fixed;
-    right: 35px;
-    top: 40px;
+    position: relative;
+    right: 15px;
+    top: 20px;
     z-index: 101px;
     width: 30px;
     background: transparent;
@@ -217,12 +291,28 @@ header .headerContainer .headerMain p {
     line-height: 80px;
     color: #fff;
   }
+  .ingredients {
+    height: 1100px;
+  }
+  .ingredients h2 {
+    padding-top: 40px;
+  }
 }
 
 @media (max-width: 630px) {
   header .headerContainer .headerMain h1 {
     max-width: 400px;
     font-size: 60px;
+  }
+  .ingredients {
+    height: 1100px;
+    background-position: center;
+  }
+  .ingredients h2 {
+    font-size: 38px;
+  }
+  .ingredients p {
+    line-height: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
