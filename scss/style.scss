@@ -1,0 +1,277 @@
+@import '_variables';
+@import '_fonts';
+@import '_media.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+// ------------------Главная секция ----------------------
+header {
+    height: 100vh;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../img/main.jpg) no-repeat center top;
+    background-size: 100% 100%;
+
+    // --------------Меню и лого-------------------
+    .headerContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .headerMenu {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+
+            .headerMenu__logo img {
+                width: 200px;
+                height: 130px;
+            }
+
+            .headerMenu__menu ul {
+                display: flex;
+                font-size: $fontSizeMenu;
+                font-family: $font;
+                font-weight: $fontWeightMenu;
+                list-style: none;
+
+                a {
+                    position: relative;
+                    color: $colorMenu;
+                    // color: $colorHeading;
+                    text-decoration: none;
+                    padding: 0 10px;
+                    cursor: pointer;
+
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        /*изменить на right:0;, чтобы изменить направление подчёркивания */
+                        width: 0;
+                        /*задаём длинну линии до наведения курсора*/
+                        height: 2px;
+                        /*задаём ширину линии*/
+                        background-color: #faf755;
+                        /*задаём цвет линии*/
+                        content: "";
+                        transition: width 0.3s ease-out;
+                        /*задаём время анимации*/
+                    }
+
+                    &:hover:after,
+                    &:focus:after {
+                        width: 100%;
+                        /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+                    }
+
+                    &:hover {
+                        color: rgb(255, 254, 167);
+                    }
+                }
+            }
+
+            .back {
+                display: none;
+            }
+
+            .mini-menu {
+                display: none;
+            }
+        }
+
+        // -----------------Основной заголовок-----------
+        .headerMain {
+            text-align: center;
+
+            h1 {
+                margin: 0 auto;
+                max-width: 800px;
+                padding-top: 120px;
+                padding-bottom: 40px;
+                font-size: $fontSizeHeading;
+                color: $colorHeading;
+                font-family: $font;
+                font-weight: $fontWeight;
+                text-align: center;
+            }
+
+            p {
+                color: $colorMenu;
+                font-size: $fontSizeSubtitle;
+                padding-top: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    header {
+        .headerContainer {
+            padding: 0 15px;
+
+            .headerMain {
+                h1 {
+                    font-size: 110px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        .headerContainer {
+            .headerMenu {
+                .headerMenu__logo img {
+                    width: 160px;
+                    height: 100px;
+                }
+            }
+        }
+
+        .headerContainer {
+            .headerMain {
+                h1 {
+                    max-width: 600px;
+                    font-size: 90px;
+                }
+
+                p {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    header {
+        .headerContainer {
+            .headerMenu {
+                .mini-menu {
+                    display: block;
+                    position: fixed;
+                    right: 35px;
+                    top: 40px;
+                    z-index: 101px;
+                    width: 30px;
+                    // height: 13px;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
+                }
+
+                .mini-menu span {
+                    width: 100%;
+                    height: 2px;
+                    background: #fff;
+                    position: absolute;
+                    margin-top: 3px;
+                    top: 0;
+                    left: 0;
+                    transition: .3s;
+                }
+
+                .mini-menu span:first-child {
+                    top: 12px;
+                }
+
+                .mini-menu span:last-child {
+                    top: 6px;
+                }
+
+                .active span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .active span:last-child {
+                    transform: rotate(-45deg);
+                }
+
+                .active span:first-child {
+                    transform: rotate(45deg);
+                    top: 7px;
+                }
+
+                .menu {
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    background: #1b0e09;
+                    top: 0;
+                    left: 0;
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: 0.5s;
+                    transform: scale(0);
+                    z-index: 100;
+
+                }
+
+                header nav .menu li {
+                    padding-left: 0;
+                }
+
+                .show {
+                    transform: scale(1);
+                    padding: 0;
+                }
+
+                .menu li {
+                    text-align: center;
+                }
+
+                .back {
+                    display: block;
+                    color: $colorHeading;
+
+                }
+
+                .menu li:first-child {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    padding: 0 10px 0 0;
+                    font-size: 50px;
+                    font-family: serif;
+                }
+
+                .menu a {
+                    font-size: 40px;
+                    line-height: 80px;
+                    color: $colorHeading;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    header {
+        // .headerContainer {
+        //     .headerMenu {
+        //         .headerMenu__logo img {
+        //             width: 160px;
+        //             height: 100px;
+        //         }
+        //     }
+        // }
+
+        .headerContainer {
+            .headerMain {
+                h1 {
+                    max-width: 400px;
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+}

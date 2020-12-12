@@ -1,0 +1,20 @@
+$font: "Philosopher",
+"Margot Xtrafette";
+$fontSizeHeading: 120px;
+$fontSizeTitle:64px;
+$fontSizeSubtitle: 32px;
+$fontSizeMenu: 22px;
+$colorHeading: #fff;
+$colorTitle: #BDA345;
+$colorMenu: #b1afaf;
+$fontWeight: 700;
+$fontWeightMenu: 400;
+
+// -------------Заголовок на секциях-----------------
+@mixin fontTitle {
+    font-size: $fontSizeTitle;
+    color: $colorTitle;
+    font-family: $font;
+    font-weight: $fontWeight;
+    text-align: center;
+}

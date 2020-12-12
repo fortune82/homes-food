@@ -1,0 +1,228 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Philosopher';
+  src: local("Philosopher"), url("../fonts/Philosopher.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Margot Xtrafette';
+  src: local("Margot Xtrafette"), url("../fonts/Margot Xtrafette.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+header {
+  height: 100vh;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/main.jpg) no-repeat center top;
+  background-size: 100% 100%;
+}
+
+header .headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header .headerContainer .headerMenu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+header .headerContainer .headerMenu .headerMenu__logo img {
+  width: 200px;
+  height: 130px;
+}
+
+header .headerContainer .headerMenu .headerMenu__menu ul {
+  display: flex;
+  font-size: 22px;
+  font-family: "Philosopher", "Margot Xtrafette";
+  font-weight: 400;
+  list-style: none;
+}
+
+header .headerContainer .headerMenu .headerMenu__menu ul a {
+  position: relative;
+  color: #b1afaf;
+  text-decoration: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+header .headerContainer .headerMenu .headerMenu__menu ul a:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  width: 0;
+  /*задаём длинну линии до наведения курсора*/
+  height: 2px;
+  /*задаём ширину линии*/
+  background-color: #faf755;
+  /*задаём цвет линии*/
+  content: "";
+  transition: width 0.3s ease-out;
+  /*задаём время анимации*/
+}
+
+header .headerContainer .headerMenu .headerMenu__menu ul a:hover:after, header .headerContainer .headerMenu .headerMenu__menu ul a:focus:after {
+  width: 100%;
+  /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+header .headerContainer .headerMenu .headerMenu__menu ul a:hover {
+  color: #fffea7;
+}
+
+header .headerContainer .headerMenu .back {
+  display: none;
+}
+
+header .headerContainer .headerMenu .mini-menu {
+  display: none;
+}
+
+header .headerContainer .headerMain {
+  text-align: center;
+}
+
+header .headerContainer .headerMain h1 {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  font-size: 120px;
+  color: #fff;
+  font-family: "Philosopher", "Margot Xtrafette";
+  font-weight: 700;
+  text-align: center;
+}
+
+header .headerContainer .headerMain p {
+  color: #b1afaf;
+  font-size: 32px;
+  padding-top: 30px;
+}
+
+@media (max-width: 1200px) {
+  header .headerContainer {
+    padding: 0 15px;
+  }
+  header .headerContainer .headerMain h1 {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 992px) {
+  header .headerContainer .headerMenu .headerMenu__logo img {
+    width: 160px;
+    height: 100px;
+  }
+  header .headerContainer .headerMain h1 {
+    max-width: 600px;
+    font-size: 90px;
+  }
+  header .headerContainer .headerMain p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 840px) {
+  header .headerContainer .headerMenu .mini-menu {
+    display: block;
+    position: fixed;
+    right: 35px;
+    top: 40px;
+    z-index: 101px;
+    width: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  header .headerContainer .headerMenu .mini-menu span {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    margin-top: 3px;
+    top: 0;
+    left: 0;
+    transition: .3s;
+  }
+  header .headerContainer .headerMenu .mini-menu span:first-child {
+    top: 12px;
+  }
+  header .headerContainer .headerMenu .mini-menu span:last-child {
+    top: 6px;
+  }
+  header .headerContainer .headerMenu .active span:nth-child(2) {
+    opacity: 0;
+  }
+  header .headerContainer .headerMenu .active span:last-child {
+    transform: rotate(-45deg);
+  }
+  header .headerContainer .headerMenu .active span:first-child {
+    transform: rotate(45deg);
+    top: 7px;
+  }
+  header .headerContainer .headerMenu .menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #1b0e09;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 100;
+  }
+  header .headerContainer .headerMenu header nav .menu li {
+    padding-left: 0;
+  }
+  header .headerContainer .headerMenu .show {
+    transform: scale(1);
+    padding: 0;
+  }
+  header .headerContainer .headerMenu .menu li {
+    text-align: center;
+  }
+  header .headerContainer .headerMenu .back {
+    display: block;
+    color: #fff;
+  }
+  header .headerContainer .headerMenu .menu li:first-child {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0 10px 0 0;
+    font-size: 50px;
+    font-family: serif;
+  }
+  header .headerContainer .headerMenu .menu a {
+    font-size: 40px;
+    line-height: 80px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 630px) {
+  header .headerContainer .headerMain h1 {
+    max-width: 400px;
+    font-size: 60px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
