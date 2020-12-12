@@ -15,7 +15,6 @@ backMenu.addEventListener("click", () => {
     menu.classList.remove('show');
 })
 
-
 // ---------------слайдер ---------------------------------
 $(document).ready(function () {
     $('.carousel').slick({
