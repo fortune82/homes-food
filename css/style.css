@@ -251,7 +251,34 @@ hr {
 
 .descript .descript__message {
   max-width: 600px;
-  padding: 400px 0;
+  padding: 32vh 0;
+  text-align: center;
+  color: #13136e;
+}
+
+.descript .descript__message h2 {
+  font-size: 64px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+}
+
+.descript .descript__message p {
+  font-size: 36px;
+  font-family: 'Amatic SC', cursive;
+  padding-top: 40px;
+  font-weight: 700;
+}
+
+@media (max-width: 1410px) {
+  .descript .descript__message {
+    padding-top: 22vh;
+  }
+  .descript .descript__message h2 {
+    font-size: 48px;
+  }
+  .descript .descript__message p {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -260,6 +287,16 @@ hr {
   }
   header .headerContainer .headerMain h1 {
     font-size: 110px;
+  }
+  .descript .descript__message {
+    max-width: 400px;
+  }
+  .descript .descript__message h2 {
+    font-size: 42px;
+  }
+  .descript .descript__message p {
+    font-size: 28px;
+    padding: 25px 5px 0;
   }
 }
 

@@ -30,6 +30,7 @@ header {
 
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(../img/main.jpg) no-repeat center top;
+    // background-size: contain;
     // background-size: 100% 100%;
 
     // --------------Меню и лого-------------------
@@ -242,21 +243,49 @@ hr {
 // -------------------------- секция с условиями доставки, выбора и т.д.-------
 .descript {
     background: url(../img/messageBack.jpg) no-repeat center top;
-    // height: 100vh;
     background-size: cover;
     display: flex;
-    // flex-direction: column;
     justify-content: center;
 
     .descript__message {
         max-width: 600px;
-        padding: 400px 0;
-    }
+        padding: 32vh 0;
+        // padding-top: 155px;
+        text-align: center;
+        color: rgb(19, 19, 110);
+        // color: $colorMessage;
 
+        h2 {
+            font-size: $fontSizeTitle;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 36px;
+            font-family: 'Amatic SC', cursive;
+            padding-top: 40px;
+            font-weight: 700;
+        }
+    }
 }
 
+@media (max-width: 1410px) {
+    .descript {
+        .descript__message {
+            // background-size: contain;
+            padding-top: 22vh;
 
+            h2 {
+                font-size: 48px;
+            }
 
+            p {
+                font-size: 32px;
+            }
+        }
+    }
+}
 
 
 
@@ -269,6 +298,21 @@ hr {
                 h1 {
                     font-size: 110px;
                 }
+            }
+        }
+    }
+
+    .descript {
+        .descript__message {
+            max-width: 400px;
+
+            h2 {
+                font-size: 42px;
+            }
+
+            p {
+                font-size: 28px;
+                padding: 25px 5px 0;
             }
         }
     }
@@ -433,6 +477,23 @@ hr {
     .dishes-2 {
         width: 300px;
     }
+
+    // .descript {
+    //     .descript__message {
+    //         padding: 20vh 0;
+    //         padding-top: 16vh;
+    //         max-width: 350px;
+
+    //         h2 {
+    //             font-size: 32px;
+    //         }
+
+    //         p {
+    //             font-size: 22px;
+    //             padding-top: 15px;
+    //         }
+    //     }
+    // }
 }
 
 @media (max-width: 630px) {
