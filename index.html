@@ -19,11 +19,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans:ital,wght@0,300;0,600;0,800;1,700&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+
+    <!------------------------------------------- для slick slider ---------------->
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-    <script type="text/javascript" src="slick/slick.min.js" defer></script>
+    <script type="text/javascript" src="slick/slick.min.js" defer></script> -->
+    <!-- ----------------------------------- -->
+
     <script src="/scripts/main.js" defer></script>
     <title>Еда по-домашнему</title>
 </head>
@@ -45,11 +50,11 @@
                             </button>
                             <ul class="menu">
                                 <li class="back">&times;</li>
-                                <li><a href="">Наше меню</a></li>
+                                <li><a href="#ourMenu">Наше меню</a></li>
                                 <li><a href="">Фотогалерея</a></li>
-                                <li><a href="">Оплата</a></li>
-                                <li><a href="">Доставка</a></li>
-                                <li><a href="">Контакты</a></li>
+                                <li><a href="#descript">Оплата</a></li>
+                                <li><a href="#delivery">Доставка</a></li>
+                                <li><a href="#contacts">Контакты</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -66,7 +71,9 @@
 
         <section class="carouselSection">
             <p class="fontTitle">Мы готовим самые разнообразные блюда</p>
-            <div class="carousel">
+
+            <!-- ---------------слайдер slick slide на jqwery  --------------------------------- -->
+            <!-- <div class="carousel">
                 <div class="slick-slide"><img src="img/caorusel-1.jpg" alt=""></div>
                 <div class="slick-slide"><img src="img/caorusel-2.jpg" alt=""></div>
                 <div class="slick-slide"><img src="img/caorusel-3.jpg" alt=""></div>
@@ -78,7 +85,25 @@
                 <div class="slick-slide"><img src="img/caorusel-9.jpg" alt=""></div>
                 <div class="slick-slide"><img src="img/caorusel-10.jpg" alt=""></div>
                 <div class="slick-slide"><img src="img/caorusel-11.jpg" alt=""></div>
+            </div> -->
+
+            <!-- ----------------------------------------------- -->
+            <!-- ----------------------слайдер для чистого js ----------- -->
+            <div id="slider">
+                <div class="carousel">
+                    <img src="img/caorusel-2.jpg" alt="">
+                    <img src="img/caorusel-3.jpg" alt="">
+                    <img src="img/caorusel-4.jpg" alt="">
+                    <img src="img/caorusel-5.jpg" alt="">
+                    <img src="img/caorusel-6.jpg" alt="">
+                    <img src="img/caorusel-7.jpg" alt="">
+                    <img src="img/caorusel-8.jpg" alt="">
+                    <img src="img/caorusel-10.jpg" alt="">
+                    <img src="img/caorusel-11.jpg" alt="">
+                    <img src="img/caorusel-1.jpg" alt="">
+                </div>
             </div>
+            <!-- ------------------------------------------ -->
         </section>
         <section class="ingredients">
             <h2 class="fontTitle">Свежие ингредиенты</h2>
@@ -91,7 +116,7 @@
 
         <!-- -----------------------секция с нашим меню ------------------->
 
-        <section class="dishesMenu" id="menu">
+        <section class="dishesMenu" id="ourMenu">
             <p class="fontTitle">Наше меню</p>
             <p class="dividerGold"><img src="img/DividerGold.png" alt="divider gold"></p>
             <div class="container ">
@@ -202,7 +227,7 @@
             </div>
         </section>
         <!-- --------------------------сеекция с сообщением про различные условия -->
-        <section class="descript">
+        <section class="descript" id="descript">
             <div class="descript__message">
                 <h2>Свяжитесь с нами!</h2>
                 <p>Выбрали блюдо - свяжитесь с нами и обсудите условия (время, доставка, оплата, ингредиенты, способ
@@ -213,10 +238,38 @@
             </div>
         </section>
 
-        <section></section>
-        <section></section>
-        <section></section>
-        <footer></footer>
+        <!------------------------------ доставка------------------------ -->
+        <section class="delivery" id="delivery">
+            <p class="fontTitle">Вы не платите за доставку!</p>
+            <div class=deliveryDescription>
+                <p>Доставка в черте центра города Мариуполя занимает не более 45 минут и является бесплатной.
+                    В районы, отдалённые от центра города оговариваються отдельно.
+                </p>
+            </div>
+        </section>
+        <section class="contacts" id="contacts">
+            <div class="contactsContainer">
+                <h2>Контакты</h2>
+                <p>Осуществить заказ Вы можете по телефону, в мессенджере (наша группа в "Viber") или в форме обратной
+                    связи
+                    на сайте</p>
+                <div class="contactsData">
+                    <span><a href="tel:+380665130941">Тел. 066-513-09-41</a></span>
+                    <span><a href="viber://chat?number=%2B380665130941">Группа в Viber
+                            <img src="https://it-land.by/wp-content/uploads/2018/10/Viber-logo.png" alt=""></a></span>
+                    <span><a href="mailto:alla@mailme.com">alla@mailme.com</a></span>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="bottomUp">
+                <bottom class="bottom-arrow-up"><span>Up</span></bottom>
+            </div>
+        </section>
+
+
+        <footer>
+            <p>2020 Все права защищены</p>
+        </footer>
     </main>
 
 </body>

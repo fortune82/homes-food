@@ -18,8 +18,13 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/pattern-background.png);
 }
 
 .fontTitle {
@@ -43,9 +48,13 @@ body {
   }
 }
 
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 header {
-  height: 100vh;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/main.jpg) no-repeat center top;
+  background: linear-gradient(to right, rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url(../img/main.jpg) no-repeat center top;
 }
 
 header .headerContainer {
@@ -122,7 +131,7 @@ header .headerContainer .headerMain h1 {
   max-width: 800px;
   padding-top: 120px;
   padding-bottom: 40px;
-  font-size: 120px;
+  font-size: 100px;
   color: #fff;
   font-family: "Philosopher", "Margot Xtrafette";
   font-weight: 700;
@@ -133,22 +142,28 @@ header .headerContainer .headerMain p {
   color: #b1afaf;
   font-size: 32px;
   padding-top: 30px;
+  padding-bottom: 120px;
 }
 
-.carouselSection {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/pattern-background.png);
+.carouselSection #slider {
+  width: 100%;
+  height: 465px;
+  margin: 50px auto;
+  margin-bottom: 140px;
+  overflow: hidden;
 }
 
 .carouselSection .carousel {
-  margin: 0 auto;
   display: flex;
+  justify-content: flex-start;
+  position: relative;
+  left: 0;
+  /*для того чтоб первый слайдер не дергался рывком*/
+  transition: all ease 1s;
+  /*для того чтоб слайдер плавно прокручивался*/
 }
 
-.carouselSection .carousel .slick-slide {
-  outline: none;
-}
-
-.carouselSection .carousel .slick-slide img {
+.carouselSection .carousel img {
   box-sizing: border-box;
   width: 700px;
   height: 465px;
@@ -183,10 +198,6 @@ header .headerContainer .headerMain p {
 }
 
 /* ------------------------секцию с нашим меню ---------------------*/
-.dishesMenu {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../img/pattern-background.png);
-}
-
 .dishes {
   display: flex;
   margin-top: 80px;
@@ -263,10 +274,93 @@ hr {
 }
 
 .descript .descript__message p {
-  font-size: 36px;
+  font-size: 26px;
   font-family: 'Amatic SC', cursive;
   padding-top: 40px;
   font-weight: 700;
+}
+
+.deliveryDescription {
+  background: url(../img/car-logo.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.deliveryDescription p {
+  max-width: 500px;
+  font-size: 36px;
+  color: #fff;
+  padding: 315px 72px;
+  text-align: center;
+  font-family: "Philosopher", "Margot Xtrafette";
+  line-height: 75px;
+}
+
+.contacts {
+  background-color: #201505;
+  font-family: "Philosopher", "Margot Xtrafette";
+  color: #fff;
+  text-align: center;
+}
+
+.contacts .contactsContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.contacts .contactsContainer h2 {
+  padding-top: 80px;
+  font-size: 48px;
+}
+
+.contacts .contactsContainer p {
+  padding-top: 50px;
+  font-size: 24px;
+}
+
+.contacts .contactsContainer .contactsData {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts .contactsContainer .contactsData span {
+  margin-bottom: 80px;
+}
+
+.contacts .contactsContainer .contactsData span a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 26px;
+}
+
+.contacts .contactsContainer .contactsData span a:hover {
+  color: #f7fc00;
+}
+
+footer {
+  background-color: #353232;
+}
+
+footer p {
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.bottomUp {
+  display: none;
+}
+
+.bottomUp .bottom-arrow-up {
+  padding: 15px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #eb7d7d;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
 }
 
 @media (max-width: 1410px) {
@@ -277,17 +371,11 @@ hr {
     font-size: 48px;
   }
   .descript .descript__message p {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
 @media (max-width: 1200px) {
-  header .headerContainer {
-    padding: 0 15px;
-  }
-  header .headerContainer .headerMain h1 {
-    font-size: 110px;
-  }
   .descript .descript__message {
     max-width: 400px;
   }
@@ -295,8 +383,11 @@ hr {
     font-size: 42px;
   }
   .descript .descript__message p {
-    font-size: 28px;
+    font-size: 26px;
     padding: 25px 5px 0;
+  }
+  .deliveryDescription {
+    background: linear-gradient(to right, rgba(1, 0, 5, 0.4), rgba(240, 238, 238, 0)), url(../img/car-logo.jpg) no-repeat center top;
   }
 }
 
@@ -389,6 +480,7 @@ hr {
   header .headerContainer .headerMenu .back {
     display: block;
     color: #fff;
+    cursor: pointer;
   }
   header .headerContainer .headerMenu .menu li:first-child {
     position: fixed;
@@ -417,6 +509,38 @@ hr {
   .dishes-1,
   .dishes-2 {
     width: 300px;
+  }
+  .descript .descript__message {
+    padding-top: 100px;
+    max-width: 350px;
+  }
+  .descript .descript__message h2 {
+    font-size: 28px;
+  }
+  .descript .descript__message p {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contacts .contactsContainer p {
+    line-height: 30px;
+    font-size: 22px;
+  }
+  .contacts .contactsContainer .contactsData {
+    flex-direction: column;
+    margin: 40px 0 0;
+  }
+  .contacts .contactsContainer .contactsData span {
+    margin: 40px 0 0;
+  }
+  .contacts .contactsContainer .contactsData span:nth-child(3) {
+    padding-bottom: 60px;
+  }
+  .contacts .contactsContainer .contactsData span a {
+    font-size: 22px;
+    color: #fffea7;
   }
 }
 
@@ -463,12 +587,26 @@ hr {
   .flour {
     margin-top: 20px;
   }
+  .deliveryDescription {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/car-logo.jpg) no-repeat center top;
+  }
+  .deliveryDescription p {
+    max-width: 500px;
+    font-size: 28px;
+    padding-top: 90px;
+    line-height: 50px;
+  }
 }
 
 @media (max-width: 470px) {
   .dishes-1,
   .dishes-2 {
     width: 360px;
+  }
+  .deliveryDescription p {
+    font-size: 22px;
+    padding: 100px 30px;
+    line-height: 45px;
   }
 }
 
@@ -486,6 +624,11 @@ hr {
   .dishes-1,
   .dishes-2 {
     width: 300px;
+  }
+  .deliveryDescription p {
+    font-size: 22px;
+    padding: 100px 20px;
+    line-height: 45px;
   }
 }
 /*# sourceMappingURL=style.css.map */
