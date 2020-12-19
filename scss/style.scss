@@ -60,6 +60,7 @@ header {
             .headerMenu__logo img {
                 width: 200px;
                 height: 130px;
+                margin-left: 5px;
             }
 
             .headerMenu__menu ul {
@@ -121,8 +122,9 @@ header {
             h1 {
                 margin: 0 auto;
                 max-width: 800px;
-                padding-top: 120px;
-                padding-bottom: 40px;
+                // padding-top: 120px;
+                // padding-bottom: 40px;
+                padding: 120px 5px 40px;
                 font-size: $fontSizeHeading;
                 color: $colorHeading;
                 font-family: $font;
@@ -706,6 +708,7 @@ footer {
 
         p {
             line-height: 40px;
+            font-size: 28px;
         }
     }
 

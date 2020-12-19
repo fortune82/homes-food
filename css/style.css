@@ -71,6 +71,7 @@ header .headerContainer .headerMenu {
 header .headerContainer .headerMenu .headerMenu__logo img {
   width: 200px;
   height: 130px;
+  margin-left: 5px;
 }
 
 header .headerContainer .headerMenu .headerMenu__menu ul {
@@ -129,8 +130,7 @@ header .headerContainer .headerMain {
 header .headerContainer .headerMain h1 {
   margin: 0 auto;
   max-width: 800px;
-  padding-top: 120px;
-  padding-bottom: 40px;
+  padding: 120px 5px 40px;
   font-size: 100px;
   color: #fff;
   font-family: "Philosopher", "Margot Xtrafette";
@@ -558,6 +558,7 @@ footer p {
   }
   .ingredients p {
     line-height: 40px;
+    font-size: 28px;
   }
   .fontTitle {
     padding: 20px 0;
