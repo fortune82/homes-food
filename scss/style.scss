@@ -295,8 +295,8 @@ hr {
 
     .descript__message {
         max-width: 600px;
-        padding: 32vh 0;
-        // padding-top: 155px;
+        padding: 38vh 0;
+        // padding-top: 455px;
         text-align: center;
         color: rgb(19, 19, 110);
         // color: $colorMessage;
@@ -398,11 +398,15 @@ footer {
     display: none;
 
     .bottom-arrow-up {
+        width: 30px;
+        height: 30px;
         padding: 15px;
+        font-size: 22px;
+        font-family: serif;
         position: fixed;
         bottom: 25px;
         right: 25px;
-        background-color: rgb(235, 125, 125);
+        background-color: rgba(235, 125, 125, .7);
         border-radius: 50%;
         cursor: pointer;
         outline: none;

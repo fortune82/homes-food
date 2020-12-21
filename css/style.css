@@ -262,7 +262,7 @@ hr {
 
 .descript .descript__message {
   max-width: 600px;
-  padding: 32vh 0;
+  padding: 38vh 0;
   text-align: center;
   color: #13136e;
 }
@@ -353,11 +353,15 @@ footer p {
 }
 
 .bottomUp .bottom-arrow-up {
+  width: 30px;
+  height: 30px;
   padding: 15px;
+  font-size: 22px;
+  font-family: serif;
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background-color: #eb7d7d;
+  background-color: rgba(235, 125, 125, 0.7);
   border-radius: 50%;
   cursor: pointer;
   outline: none;
