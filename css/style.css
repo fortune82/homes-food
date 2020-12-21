@@ -636,4 +636,13 @@ footer p {
     line-height: 45px;
   }
 }
+
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+img[data-src] {
+  opacity: 0;
+}
 /*# sourceMappingURL=style.css.map */

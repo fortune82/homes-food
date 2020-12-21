@@ -5,7 +5,8 @@ let menuLink = document.querySelectorAll(".menu a"); //ссылки верхне
 let carousel = document.querySelector(".carousel");
 let carouselSection = document.querySelector(".carouselSection"); // секция с каруселью
 let bottomArrowUp = document.querySelector(".bottom-arrow-up"); // кнопка прокрутки вверх
-let bottomUp = document.querySelector(".bottomUp ") // блок с кнопкой вверх
+let bottomUp = document.querySelector(".bottomUp "); // блок с кнопкой вверх
+let allImg = document.querySelectorAll('img[data-src]'); // получаем все изображения для ленивой  загрузки
 // ---------------------верхнее меню----------------------------
 
 miniMenu.addEventListener("click", () => {
@@ -86,3 +87,12 @@ setInterval(() => {
 }, 1)
 
 // -------------------------------------------
+// -----------------------ленивая загрузка (загружают изображения только, если пользователь прокрутил страницу до того места, где оно попадает во вьюпорт. Если пользователь никогда не докрутит страницу до этой точки, изображения не будут загружены.) -------------------------------
+
+console.log(allImg)
+allImg.forEach((e) => {
+    e.setAttribute('src', e.getAttribute('data-src'));
+    e.onload = function () {
+        e.removeAttribute('data-src');
+    };
+});
